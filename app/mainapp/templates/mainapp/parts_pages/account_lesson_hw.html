@@ -1,0 +1,138 @@
+{% load static %}
+
+
+<div class="site-box">
+    <h1 class="section__title">
+        <a href="/self-account/course/{{ course.slug }}/">&#10094  {{ course.title }}</a>
+    </h1>
+</div>
+
+<div class="site-box">
+    <div class="account__les-container">
+        <div></div>
+        <div class="account__les-title">
+            <p>Урок {{ lesson.number }}</p>
+            <h1>{{ lesson.title }}</h1>
+            <h1>ДОМАШНЕЕ ЗАДАНИЕ</h1>
+        </div>
+
+        <div></div>
+        <div class="account__les-zero-space"></div>
+
+        <div class="account__les-desc-title">Описание</div>
+        <div class="account__les-desc">
+            {% for desc in lesson_desc_hw %}
+                <p>{{ desc }}</p>
+            {% endfor %}
+            {% if lesson.pdf_file %}
+                <div>
+                    <img src="{% static 'img/icon_hw_file.svg' %}" alt="">
+                    <a href="/media/{{ lesson.pdf_file }}" target="_blank">Скачать домашнее задание к уроку {{ lesson.number }}</a>
+                </div>
+            {% endif %}
+        </div>
+
+        <div></div>
+        <div class="account__les-zero-space"></div>
+    </div>
+
+    <form class="account__les-hw" enctype="multipart/form-data" method="post">
+        {% csrf_token %}
+
+        <div class="account__les-hw-comment">
+            <h1>Загрузить домашнюю работу</h1>
+            <div>
+                <p class="account__les-hw-comment-p">Комментарий студента:</p>
+                <p><textarea name="comment_student" rows="7">{{ student_homework.comment_student }}</textarea></p>
+{#                <h2 class="account__les-hw-comment-mentor">Здесь отображается комментарий ученика</h2>#}
+            </div>
+            <div>
+                <p class="account__les-hw-comment-p">Комментарий ментора:</p>
+                <p><textarea readonly name="comment_mentor" rows="7">{{ student_homework.comment_mentor }}</textarea></p>
+{#                <h2 class="account__les-hw-comment-mentor">Здесь отображается комментарий преподавателя</h2>#}
+            </div>
+        </div>
+        <div class="account__les-hw-file">
+            <h1>Файлы</h1>
+            <div class="account__les-hw-files">
+                {% if student_homework.image1 %}
+                    <div class="account__les-hw-files-b">
+                        <div class=account__les-hw-file-ib>
+                            <img src="/media/{{ student_homework.image1 }}" alt="" id=account__les-hw-file-1ii>
+                        </div>
+                        <a href="/self-account/lesson_delete_img/{{ course.slug }}/{{ lesson.number }}/{{ student_homework.image1 }}/" class=account__les-hw-file-ib-a>Удалить</a>
+                    </div>
+                {% else %}
+                    <div class="account__les-hw-files-b">
+                        <label for=account__les-hw-file-1f id=account__les-hw-file-1l></label>
+                        <input type=file id=account__les-hw-file-1f name="image1">
+                    </div>
+                {% endif %}
+                {% if student_homework.image2 %}
+                    <div class="account__les-hw-files-b">
+                        <div class=account__les-hw-file-ib>
+                            <img src="/media/{{ student_homework.image2 }}" alt="" id=account__les-hw-file-2ii>
+                        </div>
+                        <a href="/self-account/lesson_delete_img/{{ course.slug }}/{{ lesson.number }}/{{ student_homework.image2 }}/" class=account__les-hw-file-ib-a>Удалить</a>
+                    </div>
+                {% else %}
+                    <div class="account__les-hw-files-b">
+                        <label for=account__les-hw-file-2f id=account__les-hw-file-2l></label>
+                        <input type=file id=account__les-hw-file-2f name="image2">
+                    </div>
+                {% endif %}
+                {% if student_homework.image3 %}
+                    <div class="account__les-hw-files-b">
+                        <div class=account__les-hw-file-ib>
+                            <img src="/media/{{ student_homework.image3 }}" alt="" id=account__les-hw-file-3ii>
+                        </div>
+                        <a href="/self-account/lesson_delete_img/{{ course.slug }}/{{ lesson.number }}/{{ student_homework.image3 }}/" class=account__les-hw-file-ib-a>Удалить</a>
+                    </div>
+                {% else %}
+                    <div class="account__les-hw-files-b">
+                        <label for=account__les-hw-file-3f id=account__les-hw-file-3l></label>
+                        <input type=file id=account__les-hw-file-3f name="image3">
+                    </div>
+                {% endif %}
+                {% if student_homework.pdf_file %}
+                    <div class="account__les-hw-files-b">
+                        <div id=account__les-hw-file-pb>
+                            <img src="{% static 'img/pdf.png' %}" alt="" id=account__les-hw-file-pi style="background-size: 87%;">
+                        </div>
+                        <a href="/self-account/lesson_delete_img/{{ course.slug }}/{{ lesson.number }}/{{ student_homework.pdf_file }}/" class=account__les-hw-file-ib-a>Удалить</a>
+                    </div>
+                {% else %}
+                    <div class="account__les-hw-files-b">
+                        <label for=account__les-hw-file-pdf id=account__les-hw-file-pdfl></label>
+                        <input type=file id=account__les-hw-file-pdf name="pdf_file">
+                    </div>
+                {% endif %}
+            </div>
+
+            {% if student_homework.image1 or student_homework.image2 or student_homework.image3 or student_homework.pdf_file or student_homework.comment_student %}
+                <input type="submit" value="Отправлено" class="account__les-hw-submitted">
+            {% else %}
+                <input type="submit" value="Отправить" class="account__les-hw-submit">
+            {% endif %}
+        </div>
+    </form>
+
+    <div class="account__les-btns">
+        <a class="account__les-btn account__les-tg" href="{{ course.telegram_channel_link }}"><div>Переходи в Телеграм-канал курса</div></a>
+        <div class="account__les-btns-lr">
+            {% if btn_l == '' %}
+            <a href="{{ btn_l }}"><div class="account__les-btn-l"></div></a>
+            {% else %}
+            <a href="{{ btn_l }}"><div class="account__les-btn-l account__les-btn-l-active"></div></a>
+            {% endif %}
+            {% if btn_r == '' %}
+            <a href="{{ btn_r }}"><div class="account__les-btn-r"></div></a>
+            {% else %}
+            <a href="{{ btn_r }}"><div class="account__les-btn-r account__les-btn-r-active"></div></a>
+            {% endif %}
+        </div>
+    </div>
+
+    <script src="{% static 'js/lesson_hw.js' %}"></script>
+
+</div>

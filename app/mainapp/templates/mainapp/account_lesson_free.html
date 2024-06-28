@@ -1,0 +1,53 @@
+{% extends "mainapp/base.html" %}
+{% load static %}
+
+{% block title %}Ваш урок, {{ user.first_name }}{% endblock %}
+
+{% block content %}
+    <div class="site-box">
+        <h1 class="section__title">
+            <a href="/self-account/">&#10094  Мои курсы</a>
+        </h1>
+    </div>
+
+    <div class="site-box">
+        <div class="account__les-container">
+            <div></div>
+            <div class="account__les-title">
+                <h1>{{ free_lesson.title }}</h1>
+                <div class="account__les-play">{{ free_lesson.type }}</div>
+            </div>
+
+            <div></div>
+            <div class="account__les-video">
+                <video controls controlsList="nodownload" loop muted="" playsinline="playsinline" poster="/media/{{ free_lesson.image }}" class="wallpaper__video">
+                    <source src="/media/{{ free_lesson.video_file }}" type="video/mp4">
+                    <source src="/media/{{ free_lesson.image }}" type="video/webm">
+                </video>
+            </div>
+
+            <div></div>
+            <div class="account__les-btns">
+                {% if free_lesson.course.on_sale %}
+                    <a class="account__les-btn account__les-choose-course" href="/courses/{{ free_lesson.course.slug }}/"><div>Купить курс полностью</div></a>
+                {% else %}
+                    <a class="account__les-btn account__les-choose-course" href="/courses-all/"><div>Выбрать курс</div></a>
+                {% endif %}
+            </div>
+
+            <div class="account__les-desc-title">Описание<br>урока</div>
+            <div class="account__les-desc">
+                {% for desc in free_lesson_desc %}
+                    <p>{{ desc }}</p>
+                {% endfor %}
+                {% if free_lesson.pdf_file %}
+                    <div>
+                        <img src="{% static 'img/icon_hw_file.svg' %}" alt="">
+                        <a href="/media/{{ free_lesson.pdf_file }}" target="_blank">Скачать дополнительный файл к уроку</a>
+                    </div>
+                {% endif %}
+            </div>
+
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% load static markdownify %}
+
+<!-- Эксперт курса -->
+<div class="site-box">
+    <section class="pc__teacher">
+        <h1 class="section__title">Эксперт курса</h1>
+        <div class="pc__teacher__photo">
+            {% if mentor.photo %}
+                <img src="{{ mentor.photo.url }}" alt="">
+            {% endif %}
+            <div class="pc__teacher__data">
+                <div class="pc__teacher__name">{{ mentor.first_name }} {{ mentor.last_name }}</div>
+                <div class="pc__teacher__note">{{ mentor.status }}</div>
+            </div>
+        </div>
+        <div class="pc__teacher__cards">
+            <div class="pc__teacher__card pc__teacher__card-1">
+                <div class="pc__teacher__card-number">1</div>
+                <div class="pc__teacher__card-text">{{ mentor.experience }}</div>
+            </div>
+            <div class="pc__teacher__card pc__teacher__card-2">
+                <div class="pc__teacher__card-number">2</div>
+                <div class="pc__teacher__card-text">{{ mentor.credo }}</div>
+            </div>
+            <div class="pc__teacher__card pc__teacher__card-3">
+                <div class="pc__teacher__card-number">3</div>
+                <div class="pc__teacher__card-text">{{ mentor.approach }}</div>
+            </div>
+        </div>
+        <div class="pc__teacher__dots">
+            <span class="pc__teacher__dot pc__teacher__dot-active" onclick="showSlides('pc__teacher__card', 'pc__teacher__dot', 0)"></span>
+            <span class="pc__teacher__dot" onclick="showSlides('pc__teacher__card', 'pc__teacher__dot', 1)"></span>
+            <span class="pc__teacher__dot" onclick="showSlides('pc__teacher__card', 'pc__teacher__dot', 2)"></span>
+        </div>
+    </section>
+</div>

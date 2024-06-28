@@ -1,0 +1,12 @@
+{% extends "mainapp/base.html" %}
+
+{% block title %}Ваш урок, {{ user.first_name }}{% endblock %}
+
+
+{% block content %}
+    {% if hw == 0 %}
+        {% include "mainapp/parts_pages/account_lesson.html" %}
+    {% else %}
+        {% include "mainapp/parts_pages/account_lesson_hw.html" %}
+    {% endif %}
+{% endblock %}

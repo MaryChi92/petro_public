@@ -1,0 +1,43 @@
+{% load static markdownify %}
+
+<div class="site-box">
+    <section class="fl__about">
+        <img src={% static '/img/main_free_lessons_all.png' %} alt="">
+        <div class="fl__about__data">
+            <h1>БИБЛИОТЕКА<br>БЕСПЛАТНЫХ<br>МАТЕРИАЛОВ</h1>
+            <p>Захватывающее путешествие в мир искусства ждёт вас. Наши бесплатные уроки рисования — это  первый шаг к творчеству и экспериментам! Проходи уроки и прокачивай свои креативные навыки вместе с Петроглифом!</p>
+        </div>
+        <div class="fl__about__text">
+            <p>Захватывающее путешествие в мир искусства ждёт вас. Наши бесплатные уроки рисования — это  первый шаг к творчеству и экспериментам! Проходи уроки и прокачивай свои креативные навыки вместе с Петроглифом!</p>
+        </div>
+    </section>
+</div>
+
+<div class="site-box">
+    <section class="courses"  id="anchor-courses">
+
+        <h1 class="section__title">Все бесплатные уроки</h1>
+        <div class="courses__cards">
+            {% for item in free_lessons %}
+            <div class="courses__card" style="background-image: url('/media/{{ item.image_free }}'); background-size: cover" >
+                <div class="courses__info">
+                    <div class="courses__age">{{ item.course.age_group }}</div>
+                    <div class="courses__age">{{ item.course.preparation }}</div>
+                    {% if item.course.is_popular %}
+                        <div class="courses__popular">Популярный</div>
+                    {% endif %}
+                </div>
+                <div class="courses__name">{{ item.title }}</div>
+                <div class="courses__note">
+                    <p>{{ item.description|linebreaks }}</p>
+                </div>
+                <a class="courses__detailed" href="{% url 'add_free_lesson' lesson_id=item.id %}"><div>Смотреть урок</div></a>
+            </div>
+            {% endfor %}
+
+        </div>
+
+        {% include "mainapp/parts_pages/helpdesk.html" %}
+
+    </section>
+</div>

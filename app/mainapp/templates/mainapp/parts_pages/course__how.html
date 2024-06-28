@@ -1,0 +1,33 @@
+{% load static markdownify %}
+
+
+<!-- Как проходит обучение (со всплытием блоков)  -->
+<div class="site-box">
+    <section class="pc__how">
+        <h1 class="section__title">Как проходит обучение на курсе?</h1>
+        <div class="pc__how-cards pc__how-cards-slideshow-container">
+            <div class="pc__how-card pc__how-card-1">
+                <h1><div>1</div>Оплатите курс</h1>
+                <p>Приобретите полный доступ к курсу, и изучайте его в личном кабинете. У курса есть телеграмм-канал, вступите в него, чтобы получать дополнительные материалы</p>
+            </div>
+            <div class="pc__how-card pc__how-card-2">
+                <h1><div>2</div>Подготовьте материалы для работы</h1>
+                <p>Достаньте самые важные инструменты для творчества: бумагу, карандаши, краски и кисточки</p>
+            </div>
+            <div class="pc__how-card pc__how-card-3">
+                <h1><div>3</div>Включите видео урок</h1>
+                <p>На компьютере, планшете или телефоне. В этом и есть удобство - творить из любой точки мира!</p>
+            </div>
+            <div class="pc__how-card pc__how-card-4">
+                <h1><div>4</div>Приготовьтесь к открытиям</h1>
+                <p>Делитесь тем, что узнали на уроке с семьей и друзьями! Ведь это так круто, учиться творчески</p>
+            </div>
+        </div>
+        <div class="pc__how-card__dots">
+            <span class="pc__how-card__dot pc__how-card__dot-active" onclick="showSlides('pc__how-card', 'pc__how-card__dot', 0)"></span>
+            <span class="pc__how-card__dot" onclick="showSlides('pc__how-card', 'pc__how-card__dot', 1)"></span>
+            <span class="pc__how-card__dot" onclick="showSlides('pc__how-card', 'pc__how-card__dot', 2)"></span>
+            <span class="pc__how-card__dot" onclick="showSlides('pc__how-card', 'pc__how-card__dot', 3)"></span>
+        </div>
+    </section>
+</div>

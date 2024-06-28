@@ -1,0 +1,27 @@
+{% load static markdownify %}
+
+<!-- Чему научимся? (со слайдером на 2 блока) -->
+<div class="site-box">
+  <section class="pc__what">
+    <h1 class="section__title">Чему научимся на курсе?</h1>
+    <div class="pc__what__cards pc__what-slideshow-container">
+      {% for item in course.benefits.all %}
+        <div class="pc__what__card pc__what__fade">
+          <div class="pc__what__card-img">
+            {% if item.image %}
+              <img src="{{ item.image.url }}" alt="">
+            {% endif %}
+          </div>
+          <p>{{ item.title }}</p>
+        </div>
+      {% endfor %}
+    </div>
+    <br>
+    <!-- The dots/circles -->
+    <div style="text-align:center">
+      <span class="pc__what__dot pc__what__dot-active" onclick="showSlidePcWhat(0, 1)"></span>
+      <span class="pc__what__dot" onclick="showSlidePcWhat(1, 2)"></span>
+      <span class="pc__what__dot" onclick="showSlidePcWhat(2, 3)"></span>
+    </div>
+  </section>
+</div>

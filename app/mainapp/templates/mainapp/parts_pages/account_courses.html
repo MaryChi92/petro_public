@@ -1,0 +1,112 @@
+{% load static %}
+
+
+<div class="site-box">
+    <h1 class="section__title account__greeting">Привет, {{ request.user.first_name }} !</h1>
+</div>
+
+<div class="site-box">
+    <div class="account__courses-my">
+        <div class="account__courses-my-nothing"></div>
+        <div class="account__courses-my-text">Мои курсы</div>
+    </div>
+
+    <div class="account__courses">
+        <div class="account__courses-stat">
+            <a href="#active_courses">
+                <p class="account__courses-stat-active">Активные курсы ({{ active_courses_number }})</p>
+            </a>
+            <a href="#completed_courses">
+                <p class="account__courses-stat-end">Завершенные ({{ completed_courses_number }})</p>
+            </a>
+            <a href="#free_lessons">
+                <p class="account__courses-stat-free-lessons">Бесплатные уроки</p>
+            </a>
+        </div>
+
+        <div class="account__courses-data">
+            <p class="account__courses-active" id="active_courses">АКТИВНЫЕ</p>
+            {% if active_courses_number <= 0 %}
+            <div class="account__courses-none">
+                <p>У вас нет активных курсов</p>
+                <a href="/#anchor-courses" class="account__courses-buy">Выбрать курс</a>
+            </div>
+            {% else %}
+                {% for item in student_courses %}
+                    {% if not item.is_completed %}
+                    <div class="account__courses-card">
+                        <img src="/media/{{ item.course.image }}" alt="" class="account__courses-card-img">
+                        <p class="account__courses-card-name">{{ item.course.title }}</p>
+                        <p class="account__courses-card-count">Пройдено: {{ item.get_completed_lessons_quantity }}/{{ item.course.lessons.count }}</p>
+                        {% if item.has_students_group_started %}
+                            <a href="/self-account/course/{{ item.course.slug }}/" class="account__courses-card-a">
+                                <div class="account__courses-card-btn">Продолжить смотреть</div>
+                            </a>
+                        {% else %}
+                            <a class="account__courses-card-a">
+                                <div class="account__courses-card-btn next_group">Старт курса {{ item.lessons_starts_on|date:"d-m-Y" }}</div>
+                            </a>
+                        {% endif %}
+                    </div>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+<div class="site-box">
+    <div class="account__courses">
+        <div class="account__courses-stat"></div>
+        <div class="account__courses-data">
+            <p class="account__courses-active" id="completed_courses">ЗАВЕРШЕННЫЕ</p>
+
+            {% if completed_courses_number <= 0 %}
+            <div class="account__courses-none">
+                <p>У вас нет завершенных курсов</p>
+            </div>
+            {% else %}
+                {% for item in student_courses %}
+                    {% if item.is_completed %}
+                    <div class="account__courses-card">
+                        <img src="/media/{{ item.course.image }}" alt="" class="account__courses-card-img">
+                        <p class="account__courses-card-name">{{ item.course.title }}</p>
+                        <p class="account__courses-card-count">Пройдено: {{ item.get_completed_lessons_quantity }}/{{ item.course.lessons.count }}</p>
+                        <a href="/self-account/course/{{ item.course.slug }}/" class="account__courses-card-a">
+                            <div class="account__courses-card-btn">Начать смотреть</div>
+                        </a>
+                    </div>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+    <div class="account__null"></div>
+</div>
+
+<div class="site-box">
+    <div class="account__courses">
+        <div class="account__courses-stat"></div>
+        <div class="account__courses-data">
+            <p class="account__courses-active" id="free_lessons">БЕСПЛАТНЫЕ УРОКИ</p>
+
+            {% if student_free_lessons.all.count == 0 %}
+            <div class="account__courses-none">
+                <p>У вас нет бесплатных уроков</p>
+                <a href="/free-lessons/" class="account__courses-buy">Выбрать урок</a>
+            </div>
+            {% else %}
+                {% for item in student_free_lessons.all %}
+                    <div class="account__courses-card">
+                        <img src="/media/{{ item.image }}" alt="" class="account__courses-card-img">
+                        <p class="account__courses-card-name">{{ item.title }}</p>
+                        <a href="/self-account/free-lesson/{{ item.id }}/" class="account__courses-card-a">
+                            <div class="account__courses-card-btn">Смотреть урок</div>
+                        </a>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+    <div class="account__null"></div>
+</div>

@@ -1,0 +1,84 @@
+{% load static %}
+
+
+<!-- Тарифы -->
+<div class="site-box">
+    <section class="pc__rate">
+        <h1 class="section__title">Тарифы</h1>
+        <div class="pc__rate__data">
+            <div class="pc__rate__1">
+                <h1>{{ course.title }}</h1>
+                <ul>
+                    {% for item in course_filling %}
+                        <li>{{ item }}</li>
+                    {% endfor %} 
+                </ul>
+            </div>
+            <div class="pc__rate__2" id="buy-course">
+                <form action="{% url 'buy_course' slug=course.slug %}"  method="post" class="pc__rate__form">
+                    {% csrf_token %}
+                    {% if course.lessons_starts_on %}
+                        <h1 class="pc__rate__form__title">ЗАПИСАТЬСЯ НА <span class="pc__rate__form__title next_group_orange_date">СЛЕДУЮЩИЙ<br>ПОТОК КУРСА С {{ course.lessons_starts_on|date:"d.m" }}</span> </h1>
+                    {% else %}
+                        <h1 class="pc__rate__form__title">ЗАПИСАТЬСЯ НА КУРС</h1>
+                    {% endif %}
+                    {% if not request.user.is_authenticated %}
+                        <p class="pc__rate__form__warning">Для покупки курса необходимо авторизоваться</p>
+                    {% endif %}
+                    <div class="pc__rate__form__inputs">
+                        <div class="pc__rate__form__promo">
+                            <input class="pc__rate__form__inputs_promo" type="text" name="promocode" placeholder="Промокод">
+                            <div class="pc__rate__promo_submit submit_var1">Применить</div>
+                            <div class="pc__rate__promo_submit submit_var2">✓</div>
+                        </div>
+                        <p class="pc__rate__promo_error hidden">Вы ввели неверный промокод, либо срок действия промокода истек</p>
+                        {% if request.user.is_authenticated %}
+                            <input class="pc__rate__form__inputs_email" type="email" name="email" placeholder="Почта" value={{ request.user.email }} readonly>
+                        {% else %}
+                            <input class="pc__rate__form__inputs_email" type="email" name="email" placeholder="Почта">
+                        {% endif %}
+                        <!-- <input class="pc__rate__form__inputs_phone" type="tel" name="phone" placeholder="+7"> -->
+                        <p>Нажимая на кнопку «Оплатить курс», вы принимаете условия <a href="{% url 'documents' name="offer" %}">пользовательского соглашения</a>.</p>
+                    </div>
+                    <div class="pc__rate__form__pay">
+                        <div class="pc__rate__form_price">{{ course.price }}</div>
+                        <input class="pc__hidden__price" name="price" type="hidden">
+                        <input type="submit" value="Оплатить курс" class="pc__rate__form_submit">
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        {% include "mainapp/parts_pages/helpdesk.html" %}
+
+    </section>
+</div>
+
+{% block javascript %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script>
+        window.onload = function () {
+            $('.pc__rate__promo_submit').on('click', function () {
+                $.ajax({
+                    type: 'POST',
+                    url: "{% url 'apply_promo' slug=course.slug %}",
+                    data: $('.pc__rate__form__inputs_promo').serialize(),
+                    success: function (response) {
+                        if (response.final_price === 'the same') {
+                            $('.pc__rate__promo_error').removeClass('hidden')
+                        } else {
+                            $('.pc__rate__promo_error').addClass('hidden')
+                            $('.pc__rate__form_price').text(response.final_price)
+                            $('.pc__hidden__price').val(response.final_price)
+                        }
+                    },
+                    error: function (response) {
+                        console.log(response.responseJSON.errors)
+                    }
+                });
+            });
+        }
+    </script>
+
+{% endblock %}

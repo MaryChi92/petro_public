@@ -1,0 +1,16 @@
+{% load static %}
+
+
+<!-- Материалы и инструменты -->
+<div class="site-box">
+    <section class="pc__resources">
+        <h1 class="section__title">Необходимые материалы<br>и инструменты</h1>
+        <div class="pc__resources__block">
+            <ul>
+                {% for item in course_tools %}
+                     <li>{{ item }}</li>
+                {% endfor %}    
+            </ul>
+        </div>
+    </section>
+</div>

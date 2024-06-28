@@ -1,0 +1,53 @@
+{% load static markdownify %}
+
+
+<!-- Вопросы -->
+<div class="site-box">
+    <section class="faq">
+        <p class="faq__title">Главные вопросы о курсе</p>
+        <div class="faq__body">
+            <div class="faq__items">
+                <div class="faq__item">
+                    <button class="faq__collapsible"><p>Как проходят занятия на курсе?</p></button>
+                    <div class="faq__content">
+                        <p>
+                            {{ course.question_lessons_features }}
+                        </p>
+                    </div>
+                </div>
+                <div class="faq__item">
+                    <button class="faq__collapsible"><p>Насколько по времени доступен курс?</p></button>
+                    <div class="faq__content">
+                        <p>
+                            {{ course.question_access_duration }}
+                        </p>
+                    </div>
+                </div>
+                <div class="faq__item">
+                    <button class="faq__collapsible"><p>Что насчет домашнего задания?</p></button>
+                    <div class="faq__content">
+                        <p>
+                            {{ course.question_homework }}
+                        </p>
+                    </div>
+                </div>
+                <div class="faq__item">
+                    <button class="faq__collapsible"><p>Что я получу, вступив в телеграм-канал курса?</p></button>
+                    <div class="faq__content">
+                        <p>
+                            {{ course.question_joining_telegram_chat }}
+                        </p>
+                    </div>
+                </div>
+                <div class="faq__item">
+                    <button class="faq__collapsible"><p>Я оплатил и не получил доступ к курсу.</p></button>
+                    <div class="faq__content">
+                        <p>
+                            {{ course.question_paid_no_access }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

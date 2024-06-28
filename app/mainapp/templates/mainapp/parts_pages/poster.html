@@ -1,0 +1,11 @@
+{% load static %}
+
+<!-- Постер (только для главной страницы!) -->
+<section class="wallpaper">
+    <picture>
+        <source media="(max-width:431px)" srcset="{% static 'img/poster_index_mobile.png' %}">
+{#        <img src="img_orange_flowers.jpg" alt="Flowers" style="height:auto;">#}
+        <img class="poster" src="{% static 'img/poster_index_desktop.png' %}">
+    </picture>
+{#        <img class="poster" src="{% static 'img/poster_index_desktop.png' %}">#}
+</section>

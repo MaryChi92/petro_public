@@ -1,0 +1,47 @@
+{% load static markdownify %}
+<!-- Курсы  -->
+    <!-- Обратите внимание что 1ый курс уникальный! Остальные однотипные, их можно в поток -->
+    <div class="site-box">
+        <section class="courses"  id="anchor-courses">
+            <div class="self-account__title">Добро пожаловать, {{ user.first_name }}!</div>
+            <h1 class="section__title">Ваши курсы</h1>
+            <div class="courses__cards">
+
+                {% if first_course_buy %}
+                <div class="courses__card">
+                    <div class="courses__info">
+                        <a class="courses__age" href="{% url 'filter_courses' %}?key={{ first_course.age_group }}">{{ first_course.age_group }}</a>
+                        <div class="courses__count" >{{ first_course.get_quantity_lessons }}</div>
+                        <div class="courses__time courses__time-unique" >{{ first_course.duration }}</div>
+                    </div>
+                    <div class="courses__name">{{ first_course.title }}</div>
+                    <div class="courses__for-btns">
+                        <a class="courses__for-1" href="{% url 'filter_courses' %}?key={{ first_course.preparation }}"><div>{{ first_course.preparation }}</div></a>
+                        <div class="courses__for-2"><div>О ПЕТРОГЛИФЕ</div></div>
+                    </div>
+                    {% for desc in descriptions_first %}
+                        <p class="courses__note">{{ desc }}</p>
+                    {% endfor %}
+                    <a class="courses__detailed" href="{% url 'course' first_course.slug %}"><div>Подробнее о курсе</div></a>
+                </div>
+                {% endif %}
+
+                {% for item in courses %}
+                <div class="courses__card">
+                    <div class="courses__info">
+                        <a class="courses__age" href="{% url 'filter_courses' %}?key={{ item.age_group }}">{{ item.age_group }}</a>
+                        <div class="courses__count">{{ item.get_quantity_lessons }}</div>
+                        <div class="courses__time">{{ item.duration }}</div>
+                    </div>
+                    <div class="courses__name">{{ item.title }}</div>
+                    <a class="courses__for" href="{% url 'filter_courses' %}?key={{ item.preparation }}"><div>{{ item.preparation }}</div></a>
+                    {% for desc in item.description %}
+                        <p class="courses__note">{{ desc }}</p>
+                    {% endfor %}
+                    <a class="courses__detailed" href="{% url 'course' item.slug %}"><div>Подробнее о курсе</div></a>
+                </div>
+                {% endfor %}
+
+            </div>
+        </section>
+    </div>

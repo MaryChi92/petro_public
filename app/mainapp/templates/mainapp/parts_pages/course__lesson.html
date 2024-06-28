@@ -1,0 +1,75 @@
+{% load static %}
+
+
+<!-- Описание уроков (раскрывающиеся блоки) -->
+<div class="site-box">
+    <section class="pc__lesson">
+        <h1 class="section__title">Описание уроков</h1>
+        <div class="faq__body">
+            <div class="faq__items">
+                {% for lesson in lessons %}
+                <div class="faq__item">
+                    <button class="faq__collapsible"><div><div><span class="faq__collapsible-lesson-open">Урок {{ lesson.number }}</span></div><div>{{ lesson.title }}</div></div></button>
+                    <div class="faq__content pc__lesson__content">
+                        {% if lesson.lesson_goal %}
+                        <div class="pc__lesson__p">
+                            <p class="pc__lesson-title">Цель урока</p>
+                            <p class="pc__lesson-text">{{ lesson.lesson_goal}}</p>
+                        </div>
+                        {% endif %}
+
+                        {% if lesson.new_skill %}
+                        <div class="pc__lesson__p">
+                            <p class="pc__lesson-title">Чему научится ребенок?</p>
+                            <p class="pc__lesson-text">{{ lesson.new_skill }}</p>
+                        </div>
+                        {% endif %}
+
+                        {% if lesson.materials %}
+                        <div class="pc__lesson__p">
+                            <p class="pc__lesson-title">Что нужно для урока?</p>
+                            <ul class="pc__lesson-text">
+                                {% for item_li in lesson.material %}
+                                    <li>{{ item_li }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        {% endif %}
+                        
+                        {% if lesson.image %}
+                        <div class="pc__lesson__img">
+                            <img src="{{ lesson.image.url }}" alt="">
+                        </div>
+                        {% endif %}
+                    
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="pc__lesson-all">Смотреть все уроки</div>
+        <div class="pc__lesson__container">
+            {% for item in course.talents.all %}   
+            <div class="pc__lesson__card slider__fade">
+                <h1>{{ item.title }}</h1>
+                <p>{{ item.description}}</p>
+                {% if item.image %}
+                    <img src="{{ item.image.url }}" alt="">
+                {% endif %}
+            </div>
+            {% endfor %}
+        </div>
+        <br>
+        <div class="pc__lesson__dots">
+            <span class="pc__lesson__dot pc__lesson__dot-active" onclick="showSlides('pc__lesson__card', 'pc__lesson__dot', 0)"></span>
+            <span class="pc__lesson__dot" onclick="showSlides('pc__lesson__card', 'pc__lesson__dot', 1)"></span>
+            <span class="pc__lesson__dot" onclick="showSlides('pc__lesson__card', 'pc__lesson__dot', 2)"></span>
+        </div>
+        <div class="pc__lesson__pay">
+            <div>
+                <h2>Давайте отправимся в творческое путешествие на курсе<br>“{{ course.title }}”</h2>
+                <a href="#anchor-buy-course"><div>Купить</div></a>
+            </div>
+        </div>
+    </section>
+</div>

@@ -1,0 +1,770 @@
+[
+{
+  "model": "cookie_consent.cookiegroup",
+  "pk": 1,
+  "fields": {
+    "varname": "social",
+    "name": "Social Cookies",
+    "description": "Файлы cookie – это небольшие фрагменты текста, передаваемые в браузер с сайта, который вы открываете. С их помощью сайт запоминает информацию о ваших посещениях.",
+    "is_required": false,
+    "is_deletable": true,
+    "ordering": 0,
+    "created": "2023-12-08T21:03:08.873Z"
+  }
+},
+{
+  "model": "cookie_consent.cookie",
+  "pk": 1,
+  "fields": {
+    "cookiegroup": 1,
+    "name": "personal",
+    "description": "Персональные данные клиентов ;)",
+    "path": "/",
+    "domain": "",
+    "created": "2023-12-08T21:05:22.921Z"
+  }
+},
+{
+  "model": "authapp.studentuser",
+  "pk": "42db7d71-f813-4dd1-98f7-e8f253d9ed05",
+  "fields": {
+    "password": "pbkdf2_sha256$600000$LS9zck4qqtp0rFN09O0Ds5$OT+i3wQA9uNEcBu+fIX6Rae+TOTZQy1LsGkTniKVp74=",
+    "last_login": "2023-11-18T08:06:58.143Z",
+    "is_superuser": true,
+    "last_name": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2023-10-14T21:19:36Z",
+    "first_name": "PetroAdminMaria",
+    "email": "admin@local.ru",
+    "phone_number": "79275018932",
+    "age": null,
+    "bio": "Что то написать надо было",
+    "created_at": "2023-10-14T21:19:36.491Z",
+    "updated_at": "2023-11-19T18:49:59.205Z",
+    "deleted": false,
+    "activation_key": "",
+    "activation_key_expires": "2023-10-16T21:18:35Z",
+    "groups": [],
+    "user_permissions": [],
+    "courses": [
+      "1576ca7d-20a8-4df7-8613-da757f683643",
+      "329b0cc7-f44a-477a-a1c0-f6e044a229a8",
+      "7153a30b-732c-4997-a57e-22260280063c"
+    ]
+  }
+},
+{
+  "model": "authapp.studentuser",
+  "pk": "66c3fd59-011b-468a-986d-4715d7bf3e56",
+  "fields": {
+    "password": "pbkdf2_sha256$600000$TeV9e81RjSWNzytSoYhzUY$dxqYbibJHPWHcCamKHaX7z9QrM4SJ4I3nwbtw09C6ZY=",
+    "last_login": "2023-12-09T08:31:49.848Z",
+    "is_superuser": true,
+    "last_name": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2023-12-08T20:49:33.944Z",
+    "first_name": "Teisy",
+    "email": "ne_teisy@mail.ru",
+    "phone_number": "89172166785",
+    "age": null,
+    "bio": "",
+    "created_at": "2023-12-08T20:49:34.665Z",
+    "updated_at": "2023-12-08T20:49:34.676Z",
+    "deleted": false,
+    "activation_key": "",
+    "activation_key_expires": "2023-12-10T20:48:01.032Z",
+    "groups": [],
+    "user_permissions": [],
+    "courses": []
+  }
+},
+{
+  "model": "authapp.studentuser",
+  "pk": "86073d7d-cb51-48c3-92c0-d7161639d97d",
+  "fields": {
+    "password": "pbkdf2_sha256$600000$3Bxh3ku4gSvM5Xu9Dbn8CZ$PDRjp+2EjxKS8bGwYP1aFo8dU/te8vHztjd19fvJpRw=",
+    "last_login": "2023-11-22T08:41:08.785Z",
+    "is_superuser": false,
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2023-11-05T16:01:06.916Z",
+    "first_name": "Мария Чибасова",
+    "email": "vertushka34@yandex.ru",
+    "phone_number": "89275018932",
+    "age": 30,
+    "bio": "",
+    "created_at": "2023-11-05T16:01:07.105Z",
+    "updated_at": "2023-11-20T10:53:40.939Z",
+    "deleted": false,
+    "activation_key": "d20983af5b706a263867e921b4f8d0aafb612689",
+    "activation_key_expires": "2023-11-07T15:59:49.031Z",
+    "groups": [],
+    "user_permissions": [],
+    "courses": []
+  }
+},
+{
+  "model": "authapp.studentuser",
+  "pk": "b99a00fe-3697-4fa5-8b8a-e7ef0b49fc71",
+  "fields": {
+    "password": "pbkdf2_sha256$600000$uwlcqgZUdnJiWmlCk7pK7d$f4025yjqTuwKdyoaw+jkbJUsmv0Pzcy3moOlD1QRc2c=",
+    "last_login": "2023-11-14T17:45:36.930Z",
+    "is_superuser": false,
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2023-10-25T17:48:12Z",
+    "first_name": "Дима",
+    "email": "hodas.work@gmail.com",
+    "phone_number": "37529215680",
+    "age": null,
+    "bio": "",
+    "created_at": "2023-10-25T17:48:13.385Z",
+    "updated_at": "2023-10-25T17:49:50.867Z",
+    "deleted": false,
+    "activation_key": "d0c3c72e52fbc2d855686c2d7f395e1e696e7dab",
+    "activation_key_expires": "2023-10-27T17:46:57Z",
+    "groups": [],
+    "user_permissions": [],
+    "courses": [
+      "1576ca7d-20a8-4df7-8613-da757f683643"
+    ]
+  }
+},
+{
+  "model": "authapp.studentuser",
+  "pk": "d249dcbf-674f-4f4e-861d-5260f07901d7",
+  "fields": {
+    "password": "pbkdf2_sha256$600000$DjPhNIOFZA9oaY3GYJUkxe$XRdgQBxuru3LMxsCyXC2slHrUeb6C4E6K4ukLSAf5Zw=",
+    "last_login": "2023-11-20T11:43:51.611Z",
+    "is_superuser": false,
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2023-10-25T12:55:12Z",
+    "first_name": "Dax",
+    "email": "John-Xenos@yandex.ru",
+    "phone_number": "79138721286",
+    "age": null,
+    "bio": "",
+    "created_at": "2023-10-25T12:55:12.599Z",
+    "updated_at": "2023-11-20T11:20:00.072Z",
+    "deleted": false,
+    "activation_key": "cbf32756931b976bc0223c0f67c992391e124bab",
+    "activation_key_expires": "2023-10-27T12:52:24Z",
+    "groups": [],
+    "user_permissions": [],
+    "courses": []
+  }
+},
+{
+  "model": "mainapp.benefit",
+  "pk": "7648c595-f2e2-4710-8f20-7c406977077c",
+  "fields": {
+    "title": "Рисовать мамонта",
+    "image": "benefit_img/мамонт.svg",
+    "deleted": false
+  }
+},
+{
+  "model": "mainapp.benefit",
+  "pk": "a85b8a67-9e7c-47eb-8ed7-9ecaddb4653b",
+  "fields": {
+    "title": "Придумывать истории",
+    "image": "benefit_img/карта.svg",
+    "deleted": false
+  }
+},
+{
+  "model": "mainapp.benefit",
+  "pk": "c1a9044f-be61-4074-8184-73762aeb57f9",
+  "fields": {
+    "title": "Мыслить образами",
+    "image": "benefit_img/елочка.svg",
+    "deleted": false
+  }
+},
+{
+  "model": "mainapp.benefit",
+  "pk": "e7e19fa0-1d48-448a-8fae-38fb859e9918",
+  "fields": {
+    "title": "Путешествовать по местам Петроглифов",
+    "image": "benefit_img/гора.svg",
+    "deleted": false
+  }
+},
+{
+  "model": "mainapp.talent",
+  "pk": "3e0b6a50-5d16-43dc-9e1c-03ebfce9d6d7",
+  "fields": {
+    "title": "Навык составлять истории",
+    "description": "Ученик придумывает истории, следуя последовательности, продумывая цели для героя и итог их достижения",
+    "image": "talent_img/карта_r6dE3Zc.svg",
+    "deleted": false
+  }
+},
+{
+  "model": "mainapp.talent",
+  "pk": "c654fda1-4b2c-40f7-a68d-310e735700a6",
+  "fields": {
+    "title": "Навык быть исследователем",
+    "description": "Экспериментировать, выбирать нестандартный подход, делать ошибки и творить!",
+    "image": "talent_img/лупа_2.svg",
+    "deleted": false
+  }
+},
+{
+  "model": "mainapp.talent",
+  "pk": "c68fb95f-6c4f-4c0e-801b-f674a5a004b6",
+  "fields": {
+    "title": "Навык образного мышления",
+    "description": "Ребенок учится думать картинками и образами, что способствует развитию творческого мышления",
+    "image": "talent_img/елочка.svg",
+    "deleted": false
+  }
+},
+{
+  "model": "mainapp.mentor",
+  "pk": "89bb1f79-fdb4-4846-baf3-a7a3806dd752",
+  "fields": {
+    "first_name": "Алина",
+    "last_name": "Заремба",
+    "photo": "mentor/Mask_group_с_уголками.png",
+    "status": "художник, основатель школы",
+    "quote": "Детские рисунки похожи на петроглифы - самое первое изобразительное искусство человека. Твои рисунки - это то, чем вдохновляются даже самые великие художники.",
+    "experience": "Опыт художника и куратора выставок современного искусства. Алина уже четыре года преподает детям,  использует индивидуальный подход в обучении и погружает в историю искусств. В ее опыте работа с художниками  разных уголков России, мастер-классы для детей и лекции по истории для взрослых.",
+    "credo": "Курсы Алины построены так, чтобы ученик не боялся браться за смелые цвета,  использовать неожиданные формы и сочетания. И, что немаловажно, полученные с уроков навыки уже можно применять практически, сколько бы лет не было ученику!",
+    "approach": "Алина уверена, что творчество детей- это самое  искреннее искусство, а задача преподавателя помочь ученику найти свой исследовательский вектор. Она знает, как помочь ребенку влюбиться в искусство и поверить в свои творческие силы."
+  }
+},
+{
+  "model": "mainapp.preparation",
+  "pk": "38d57960-4b59-46bd-95a0-7067706dbc7b",
+  "fields": {
+    "value": "Для Подготовленных"
+  }
+},
+{
+  "model": "mainapp.preparation",
+  "pk": "68721505-5a8e-4c41-aa63-cf39444d7db6",
+  "fields": {
+    "value": "Для Начинающих"
+  }
+},
+{
+  "model": "mainapp.preparation",
+  "pk": "c2bd46b2-2ca4-40e0-afda-df784bc5d757",
+  "fields": {
+    "value": "Для Начинающих и Подготовленных"
+  }
+},
+{
+  "model": "mainapp.course",
+  "pk": "1576ca7d-20a8-4df7-8613-da757f683643",
+  "fields": {
+    "title": "Древний мир наскальной живописи",
+    "slug": "first-course",
+    "category": "ART",
+    "note": "Курс, чтобы познакомится со школой поближе",
+    "description": "Развиваем визуальное мышление\r\nПогружаемся в историю древних людей\r\nПутешествуем по четырем странам в поисках петроглифов",
+    "price": 4500,
+    "image": "сourses_images/C0007.00_28_42_33.Still004_q9FW6xz.jpg",
+    "duration": "Бесконечный доступ",
+    "age_group": "6-10 лет",
+    "tools": "Папка акварельной бумаги или папка бумаги для рисунка - А4\r\nКисти №4-6,6-8, белка или пони, синтетика, колонок\r\nАкварель 12 цветов (вместо акварели можно использовать гуашь)\r\nЦветные карандаши 12 цветов (вместо цветных карандашей можно использовать масляную пастель или восковые мелки)\r\nПалитра или белая тарелка\r\nБаночка для воды\r\nПростой карандаш\r\nМаркер толстый\r\nЛастик\r\nЦветная бумага\r\nМасляная пастель (вместо масляной пастели можно использовать восковые мелки)",
+    "preparation": "68721505-5a8e-4c41-aa63-cf39444d7db6",
+    "filling": "4 видео-урока, от 15 минут каждый\r\nИнтерактивные викторины и тесты после каждого урока\r\nВиртуальные экскурсии по скалам и пещерам с петроглифами\r\nдомашнее задание с закрепляющими упражнениями\r\nтесты после каждого урока\r\nТелеграм-канал курса с интересными фактами и сообществом учеников",
+    "question_lessons_features": "Курс “Древний мир наскальной живописи” проходит с уроками в записи, и доступен вам безгранично по времени. Чтобы отправить домашнее задание и результат работы, вам нужно перейти в телеграм-канал курса!",
+    "question_access_duration": "Курс “Древний мир наскальной живописи” доступен безгранично. Вы можете проходить его в комфортном для вас темпе, времени, и возвращаться к урокам нужное вам количество раз.",
+    "question_homework": "Преподаватель курса Алина дает домашнее задание после каждого урока. Поделиться результатом вашей работы вы можете как в личном кабинете, так и в телеграм-канале курса. Наш преподаватель и куратор обязательно дадут вам обратную связь!",
+    "question_joining_telegram_chat": "Мы предлагаем вступить в телеграм-канал для удобства коммуникации и получения дополнительных материалов по курсу.  Здорово быть в сообществе творцов и исследователей!",
+    "question_paid_no_access": "Напишите нам на почту: help@petrocreative.ru, и мы решим вашу проблему в течении 24 часов!",
+    "telegram_channel_link": "https://t.me/+osD7uVypqjxmYTNi",
+    "on_sale": true,
+    "is_popular": false,
+    "created_at": "2023-10-22T21:48:50.935Z",
+    "updated_at": "2023-11-18T19:29:01.477Z",
+    "deleted": false,
+    "talents": [
+      "c654fda1-4b2c-40f7-a68d-310e735700a6",
+      "c68fb95f-6c4f-4c0e-801b-f674a5a004b6",
+      "3e0b6a50-5d16-43dc-9e1c-03ebfce9d6d7"
+    ],
+    "benefits": [
+      "c1a9044f-be61-4074-8184-73762aeb57f9",
+      "a85b8a67-9e7c-47eb-8ed7-9ecaddb4653b",
+      "e7e19fa0-1d48-448a-8fae-38fb859e9918",
+      "7648c595-f2e2-4710-8f20-7c406977077c"
+    ],
+    "mentors": [
+      "89bb1f79-fdb4-4846-baf3-a7a3806dd752"
+    ]
+  }
+},
+{
+  "model": "mainapp.course",
+  "pk": "329b0cc7-f44a-477a-a1c0-f6e044a229a8",
+  "fields": {
+    "title": "Линии и паттерны: все состоит из линий",
+    "slug": "linii-i-patterny-vse-sostoit-iz-linij",
+    "category": "ART",
+    "note": "",
+    "description": "Даем характер линиям\r\nИзучаем паттерны\r\nСоздаем сказочных персонажей",
+    "price": 4000,
+    "image": "сourses_images/course_wp_tmp.png",
+    "duration": "1 ,5 мес",
+    "age_group": "7-12 лет",
+    "tools": "Папка акварельной бумаги или папка бумаги для рисунка - А4\r\nКисти №4-6,6-8, белка или пони, синтетика, колонок\r\nАкварель 12 цветов (вместо акварели можно использовать гуашь)\r\nЦветные карандаши 12 цветов (вместо цветных карандашей можно использовать масляную пастель или восковые мелки)\r\nПалитра или белая тарелка\r\nБаночка для воды\r\nПростой карандаш\r\nМаркер толстый\r\nЛастик\r\nЦветная бумага\r\nМасляная пастель (вместо масляной пастели можно использовать восковые мелки)",
+    "preparation": "c2bd46b2-2ca4-40e0-afda-df784bc5d757",
+    "filling": "7 видео-урока, от 15 минут каждый\r\nИнтерактивные викторины и тесты после каждого урока\r\nдомашнее задание с закрепляющими упражнениями\r\nтесты после каждого урока\r\nТелеграм-канал курса с интересными фактами и сообществом учеников",
+    "question_lessons_features": "а",
+    "question_access_duration": "б",
+    "question_homework": "в",
+    "question_joining_telegram_chat": "г",
+    "question_paid_no_access": "д",
+    "telegram_channel_link": null,
+    "on_sale": false,
+    "is_popular": false,
+    "created_at": "2023-10-22T21:51:38.386Z",
+    "updated_at": "2023-11-12T14:22:22.803Z",
+    "deleted": false,
+    "talents": [
+      "c654fda1-4b2c-40f7-a68d-310e735700a6",
+      "c68fb95f-6c4f-4c0e-801b-f674a5a004b6",
+      "3e0b6a50-5d16-43dc-9e1c-03ebfce9d6d7"
+    ],
+    "benefits": [
+      "c1a9044f-be61-4074-8184-73762aeb57f9",
+      "a85b8a67-9e7c-47eb-8ed7-9ecaddb4653b"
+    ],
+    "mentors": [
+      "89bb1f79-fdb4-4846-baf3-a7a3806dd752"
+    ]
+  }
+},
+{
+  "model": "mainapp.course",
+  "pk": "7153a30b-732c-4997-a57e-22260280063c",
+  "fields": {
+    "title": "Форма: как из треугольника получается вулкан",
+    "slug": "forma-kak-iz-treugolnika-poluchaetsya-vulkan",
+    "category": "ART",
+    "note": "",
+    "description": "Научимся видеть геометрические фигуры во всем\r\nЗнакомимся с Кубизмом\r\nПрименяем геометрические тренды в дизайне",
+    "price": 3500,
+    "image": "сourses_images/course_wp_tmp_CmDh1E8.png",
+    "duration": "1,5 мес",
+    "age_group": "7-12 лет",
+    "tools": "",
+    "preparation": "c2bd46b2-2ca4-40e0-afda-df784bc5d757",
+    "filling": "",
+    "question_lessons_features": "а",
+    "question_access_duration": "б",
+    "question_homework": "в",
+    "question_joining_telegram_chat": "г",
+    "question_paid_no_access": "д",
+    "telegram_channel_link": null,
+    "on_sale": false,
+    "is_popular": false,
+    "created_at": "2023-10-22T21:51:00.296Z",
+    "updated_at": "2023-11-12T14:22:51.239Z",
+    "deleted": false,
+    "talents": [
+      "c654fda1-4b2c-40f7-a68d-310e735700a6",
+      "c68fb95f-6c4f-4c0e-801b-f674a5a004b6",
+      "3e0b6a50-5d16-43dc-9e1c-03ebfce9d6d7"
+    ],
+    "benefits": [
+      "c1a9044f-be61-4074-8184-73762aeb57f9",
+      "a85b8a67-9e7c-47eb-8ed7-9ecaddb4653b"
+    ],
+    "mentors": [
+      "89bb1f79-fdb4-4846-baf3-a7a3806dd752"
+    ]
+  }
+},
+{
+  "model": "mainapp.course",
+  "pk": "a916f845-b1cf-453a-8709-05d6df16e2ab",
+  "fields": {
+    "title": "Цвет: Внутри цвета",
+    "slug": "cvetbrvnutri-cveta",
+    "category": "ART",
+    "note": "Курс, чтобы познакомиться с цветом и его секретами.",
+    "description": "Заглянем в мир цвета и его секретов\r\nИзучим теорию Василия Кандинского\r\nПоработаем с контрастом, акцентом, монохромом\r\nПознакомимся с Анри Матиссом",
+    "price": 3500,
+    "image": "сourses_images/course_wp_tmp_Q9DtEIE.png",
+    "duration": "1,5 мес",
+    "age_group": "7-12 лет",
+    "tools": "",
+    "preparation": "c2bd46b2-2ca4-40e0-afda-df784bc5d757",
+    "filling": "",
+    "question_lessons_features": "а",
+    "question_access_duration": "б",
+    "question_homework": "в",
+    "question_joining_telegram_chat": "г",
+    "question_paid_no_access": "д",
+    "telegram_channel_link": null,
+    "on_sale": false,
+    "is_popular": false,
+    "created_at": "2023-10-22T21:49:45.542Z",
+    "updated_at": "2023-11-12T14:23:06.140Z",
+    "deleted": false,
+    "talents": [
+      "c654fda1-4b2c-40f7-a68d-310e735700a6",
+      "c68fb95f-6c4f-4c0e-801b-f674a5a004b6",
+      "3e0b6a50-5d16-43dc-9e1c-03ebfce9d6d7"
+    ],
+    "benefits": [
+      "c1a9044f-be61-4074-8184-73762aeb57f9",
+      "a85b8a67-9e7c-47eb-8ed7-9ecaddb4653b"
+    ],
+    "mentors": [
+      "89bb1f79-fdb4-4846-baf3-a7a3806dd752"
+    ]
+  }
+},
+{
+  "model": "mainapp.lesson",
+  "pk": "010a63dc-3bd7-4431-9497-569e810c6781",
+  "fields": {
+    "title": "Настоящие первые художники - рисуем мамонта Петро на скале!",
+    "number": 3,
+    "course": "1576ca7d-20a8-4df7-8613-da757f683643",
+    "type": "Video lesson",
+    "lesson_goal": "почувствовать себя в роли древнего человека и воспроизвести историю на скале",
+    "new_skill": "- полностью воспроизведет Петроглиф на скале\r\n- создаст вокруг своего мамонта историю из символов, закрепив материал",
+    "materials": "Краски",
+    "image": "lessons_img/урок_3_подсъем.gif",
+    "description": "Этот урок о-о-очень интересный! Ты создашь петроглиф с изображением мамонта на скале, как древний человек. А еще напишешь символами историю знакомства тебя и твоего мамонта. Итак, начнем!",
+    "video_file": "lessons_videos/Запись_экрана_2023-11-10_в_21.41.27.mp4",
+    "pdf_file": "lessons_files/_Урок_3__мы-_древние_художники.pdf",
+    "link": "",
+    "lesson_date": null,
+    "created_at": "2023-11-01T09:51:12.553Z",
+    "updated_at": "2023-11-15T10:24:19.753Z",
+    "deleted": false
+  }
+},
+{
+  "model": "mainapp.lesson",
+  "pk": "310f16bb-14e6-4f15-bdf6-668b348be7d8",
+  "fields": {
+    "title": "Урок",
+    "number": 1,
+    "course": "329b0cc7-f44a-477a-a1c0-f6e044a229a8",
+    "type": "",
+    "lesson_goal": "",
+    "new_skill": "",
+    "materials": "",
+    "image": "",
+    "description": "",
+    "video_file": "",
+    "pdf_file": "",
+    "link": "",
+    "lesson_date": null,
+    "created_at": "2023-11-01T11:24:05.211Z",
+    "updated_at": "2023-11-01T11:24:05.211Z",
+    "deleted": false
+  }
+},
+{
+  "model": "mainapp.lesson",
+  "pk": "599cbbfa-5391-4090-8c6b-3319ff794c2a",
+  "fields": {
+    "title": "Урок",
+    "number": 2,
+    "course": "a916f845-b1cf-453a-8709-05d6df16e2ab",
+    "type": "",
+    "lesson_goal": "",
+    "new_skill": "",
+    "materials": "",
+    "image": "",
+    "description": "",
+    "video_file": "",
+    "pdf_file": "",
+    "link": "",
+    "lesson_date": null,
+    "created_at": "2023-11-01T11:24:50.164Z",
+    "updated_at": "2023-11-01T11:24:50.164Z",
+    "deleted": false
+  }
+},
+{
+  "model": "mainapp.lesson",
+  "pk": "6ab82c25-17b6-43d8-93c3-87ba1f1e57a1",
+  "fields": {
+    "title": "Урок",
+    "number": 2,
+    "course": "329b0cc7-f44a-477a-a1c0-f6e044a229a8",
+    "type": "",
+    "lesson_goal": "",
+    "new_skill": "",
+    "materials": "",
+    "image": "",
+    "description": "",
+    "video_file": "",
+    "pdf_file": "",
+    "link": "",
+    "lesson_date": null,
+    "created_at": "2023-11-01T11:24:14.875Z",
+    "updated_at": "2023-11-01T11:24:14.875Z",
+    "deleted": false
+  }
+},
+{
+  "model": "mainapp.lesson",
+  "pk": "c560c00b-54f6-44c4-bb69-88cbfbb8d98e",
+  "fields": {
+    "title": "Путешествуем по четырем странам в поисках петроглифов!",
+    "number": 4,
+    "course": "1576ca7d-20a8-4df7-8613-da757f683643",
+    "type": "Video lesson",
+    "lesson_goal": "узнать, где находятся Петроглифы и что изображал человек на скалах в разных концах света",
+    "new_skill": "рассказываем про то, в каких музеях и каких местах можно увидеть петроглифы\r\n- в каких музеях: где они находятся и какой это период/ в чем их особенность\r\n- местах: период, как нашли эти петроглифы, в чем их особенность",
+    "materials": "Хорошее настроение!",
+    "image": "lessons_img/УРОК_4_гиф_1.gif",
+    "description": "В четвертом и заключительном уроке мы отправимся с тобой в путешествие за петроглифами. Узнаем, где их можно посмотреть, что на них изображено и когда они появились. Возьми с собой свой самый яркий фонарик,  мы начинаем поиски!",
+    "video_file": "",
+    "pdf_file": "lessons_files/_Урок_4_-_путешествуем_по_местам_Петроглифов_.pdf",
+    "link": "",
+    "lesson_date": null,
+    "created_at": "2023-11-01T09:51:30.003Z",
+    "updated_at": "2023-11-15T10:24:27.930Z",
+    "deleted": false
+  }
+},
+{
+  "model": "mainapp.lesson",
+  "pk": "ce24861f-d405-4e95-8f9e-e730868ed8a0",
+  "fields": {
+    "title": "Рисуем трех мамонтов",
+    "number": 2,
+    "course": "1576ca7d-20a8-4df7-8613-da757f683643",
+    "type": "Video lesson",
+    "lesson_goal": "научиться рисовать мамонтов, и иллюстрировать животного, используя игру",
+    "new_skill": "- рисовать Мамонтов и познакомится с мамонтом Петро - другом учеников школы\r\n- узнает про «природные цвета» и как они влияют на нас",
+    "materials": "- маркеры любого цвета\r\n- карандаш простой\r\n- лист А4 - 2 штуки",
+    "image": "lessons_img/УРОК_2_гиф_1.gif",
+    "description": "Привет, дорогой друг! Рад видеть тебя на втором уроке нашего курса. Сегодня ты научишься рисовать трех мамонтов, познакомишься с природными цветами и создашь целую работу с мамонтом в ледниковом периоде! Начинай второй урок, мамонт Петро тебя ждет!",
+    "video_file": "lessons_videos/Запись_экрана_2023-11-10_в_21.45.53.mp4",
+    "pdf_file": "lessons_files/_Урок__2_-_рисуем_мамонта_.pdf",
+    "link": "",
+    "lesson_date": null,
+    "created_at": "2023-11-01T09:50:41.854Z",
+    "updated_at": "2023-11-15T10:24:08.971Z",
+    "deleted": false
+  }
+},
+{
+  "model": "mainapp.lesson",
+  "pk": "cf601391-5b05-4dd8-be66-23bbb778a3ac",
+  "fields": {
+    "title": "Урок",
+    "number": 2,
+    "course": "7153a30b-732c-4997-a57e-22260280063c",
+    "type": "",
+    "lesson_goal": "",
+    "new_skill": "",
+    "materials": "",
+    "image": "",
+    "description": "",
+    "video_file": "",
+    "pdf_file": "",
+    "link": "",
+    "lesson_date": null,
+    "created_at": "2023-11-01T11:24:37.742Z",
+    "updated_at": "2023-11-01T11:24:37.742Z",
+    "deleted": false
+  }
+},
+{
+  "model": "mainapp.lesson",
+  "pk": "d0f4a2f9-fb56-433a-9afd-355815e36338",
+  "fields": {
+    "title": "Урок",
+    "number": 1,
+    "course": "a916f845-b1cf-453a-8709-05d6df16e2ab",
+    "type": "",
+    "lesson_goal": "",
+    "new_skill": "",
+    "materials": "",
+    "image": "",
+    "description": "",
+    "video_file": "",
+    "pdf_file": "",
+    "link": "",
+    "lesson_date": null,
+    "created_at": "2023-11-01T11:24:44.803Z",
+    "updated_at": "2023-11-01T11:24:44.803Z",
+    "deleted": false
+  }
+},
+{
+  "model": "mainapp.lesson",
+  "pk": "dce53f20-67f9-43c3-add4-8c3148f64bac",
+  "fields": {
+    "title": "Урок",
+    "number": 1,
+    "course": "7153a30b-732c-4997-a57e-22260280063c",
+    "type": "",
+    "lesson_goal": "",
+    "new_skill": "",
+    "materials": "",
+    "image": "",
+    "description": "",
+    "video_file": "",
+    "pdf_file": "",
+    "link": "",
+    "lesson_date": null,
+    "created_at": "2023-11-01T11:24:26.591Z",
+    "updated_at": "2023-11-01T11:24:26.591Z",
+    "deleted": false
+  }
+},
+{
+  "model": "mainapp.lesson",
+  "pk": "e499b8f2-83eb-4ee5-adfd-d93aa7033e6b",
+  "fields": {
+    "title": "Создаем свою карту Петроглифов и придумываем легенду",
+    "number": 1,
+    "course": "1576ca7d-20a8-4df7-8613-da757f683643",
+    "type": "Video lesson",
+    "lesson_goal": "узнать о символах древних людей и оставить свою наскальную историю.",
+    "new_skill": "- этот урок способствует развитию творческого мышления\r\n-ученик  сможет проиллюстрировать свою историю и придумает свои символы\r\n- узнает,  что означают символы древних людей и как они связаны с современностью.",
+    "materials": "- лист А4 - 2 штуки\r\n- карандаш простой\r\n- маркеры любого цвета",
+    "image": "lessons_img/урок_1_подсъем_1.gif",
+    "description": "Привет, исследователь!\r\nВ этом уроке ты узнаешь, что такое Петроглифы и что с помощью таких символов хотел сказать древний человек. А научишься ты, во-первых, создавать такие символы, и во-вторых, напишешь свою легенду о приключениях древнего человека! \r\nСмело бери лист, карандаш, фломастер и вперед к Петроглифам!",
+    "video_file": "lessons_videos/Запись_экрана_2023-11-10_в_21.mp4",
+    "pdf_file": "lessons_files/Урок_1_-_символы_.pdf",
+    "link": "",
+    "lesson_date": null,
+    "created_at": "2023-11-01T09:49:40.485Z",
+    "updated_at": "2023-11-15T10:23:56.554Z",
+    "deleted": false
+  }
+},
+{
+  "model": "mainapp.studentshomework",
+  "pk": "13fee885-3642-4c7b-89ee-914bccf6971f",
+  "fields": {
+    "lesson": "e499b8f2-83eb-4ee5-adfd-d93aa7033e6b",
+    "student": "42db7d71-f813-4dd1-98f7-e8f253d9ed05",
+    "image1": "",
+    "image2": "",
+    "image3": "",
+    "pdf_file": "",
+    "comment_student": "Это мое первое домашнее задание - я старалась нарисовать мамонта, как на видео, добавив своих \"фишек\".",
+    "comment_mentor": "Привет!\r\nИнтересное сочетание цветов получилось - очень здорово :)"
+  }
+},
+{
+  "model": "mainapp.subscriber",
+  "pk": "12ef6e6f-2fdb-4c71-bef2-24f0b1c89c83",
+  "fields": {
+    "first_name": "c",
+    "email": "c@c"
+  }
+},
+{
+  "model": "mainapp.subscriber",
+  "pk": "19d62606-5546-4a1a-9acb-4876141890c5",
+  "fields": {
+    "first_name": "M",
+    "email": "Pereverzeva_mary@mail.ru"
+  }
+},
+{
+  "model": "mainapp.subscriber",
+  "pk": "2de6a492-65fb-41ee-b3f2-d635183948e9",
+  "fields": {
+    "first_name": "O",
+    "email": "o@o"
+  }
+},
+{
+  "model": "mainapp.subscriber",
+  "pk": "572ce324-0ad6-4f41-b72e-06d375e64f8a",
+  "fields": {
+    "first_name": "l",
+    "email": "l@a"
+  }
+},
+{
+  "model": "mainapp.subscriber",
+  "pk": "6d5908f6-8b94-479d-8653-d224d951eaa0",
+  "fields": {
+    "first_name": "a",
+    "email": "a@a"
+  }
+},
+{
+  "model": "mainapp.subscriber",
+  "pk": "8810fef1-be51-4b30-91a8-b312d6f7581a",
+  "fields": {
+    "first_name": "a",
+    "email": "a@s"
+  }
+},
+{
+  "model": "mainapp.subscriber",
+  "pk": "bb812ab5-1b39-483c-b1bf-2b0de636a840",
+  "fields": {
+    "first_name": "Дима",
+    "email": "hodas.work@gmail.com"
+  }
+},
+{
+  "model": "mainapp.subscriber",
+  "pk": "dd118836-c2c1-4632-9996-a37133e0423b",
+  "fields": {
+    "first_name": "Мария",
+    "email": "vertushka34@yandex.ru"
+  }
+},
+{
+  "model": "mainapp.promocode",
+  "pk": "023bb3fa-74f5-46bd-a883-15c85795e64f",
+  "fields": {
+    "text": "ВТОРОЙКУРС",
+    "discount": 10,
+    "for_students": true,
+    "for_subscribers": false,
+    "for_user": null,
+    "created_at": "2023-11-21T10:35:23.347Z",
+    "expiration_date": "2023-11-29T21:00:00Z",
+    "deleted": false
+  }
+},
+{
+  "model": "mainapp.promocode",
+  "pk": "c04fc36c-d1ff-4faa-a871-6749c3c242b3",
+  "fields": {
+    "text": "ДЛЯТЕБЯ",
+    "discount": 100,
+    "for_students": false,
+    "for_subscribers": false,
+    "for_user": "admin@local.ru",
+    "created_at": "2023-11-21T10:36:49.923Z",
+    "expiration_date": "2023-11-29T21:00:00Z",
+    "deleted": false
+  }
+},
+{
+  "model": "mainapp.promocode",
+  "pk": "eb4d07f7-c858-4252-95af-7c88284c8766",
+  "fields": {
+    "text": "ПРИВЕТ",
+    "discount": 15,
+    "for_students": false,
+    "for_subscribers": true,
+    "for_user": null,
+    "created_at": "2023-11-07T09:19:29.303Z",
+    "expiration_date": "2023-11-08T03:00:00Z",
+    "deleted": false
+  }
+}
+]

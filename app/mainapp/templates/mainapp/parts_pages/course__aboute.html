@@ -1,0 +1,94 @@
+{% load static markdownify %}
+
+
+<!-- Заголовок с картинкой для десктопа и планшета-->
+<div class="site-box pc__aboute__wide">
+    <section class="pc__aboute">
+        <div class="pc__aboute__block pc__aboute__data">
+            <div class="pc__aboute__info">
+                <a class="pc__aboute__age" href="{% url 'filter_courses' %}?key={{ course.age_group }}">{{ course.age_group }}</a>
+                <div class="pc__aboute__count">{{ course.get_quantity_lessons }}</div>
+                {% if course.lessons_starts_on %}
+                    <div class="pc__aboute__time" style="background: #FFEEEE; color: #F04F4F; border-style: none;">Открыт набор</div>
+                {% else %}
+                    <!-- Для главного начального курса, указать доп стили в этот элемент! -->
+                    <div class="pc__aboute__time" {% if course.slug == 'first-course' %} style="background: #FF8D8D; color: #FFFFFF; border-style: none;"{% endif %}>{{ course.duration }}</div>
+                {% endif %}
+            </div>
+            <div class="pc__aboute__name">{{ course.title }}</div>
+            {% if course.lessons_starts_on %}
+                <div class="pc__about__lessons_starts_on">
+                    <img src="{% static 'img/Calendar.svg' %}">
+                    <div class="pc__aboute__note">&nbsp;Старт: {{ course.lessons_starts_on|date:"d-m-Y" }}</div>
+                </div>
+            {% else %}
+                <div class="pc__aboute__note">{{ course.note }}</div>
+            {% endif %}
+            <ul>
+                {% for description in descriptions %}
+                    <li>{{ description }}</li>
+                {% endfor %}
+            </ul>
+            <div class="pc__aboute__data-btns">
+                <a href="#buy-course">
+                    <div class="pc__aboute__data-btn" {% if course.lessons_starts_on %} style="background: #FFEEEE; color: #F04F4F; border-style: none;"{% endif %}>Записаться на курс</div>
+                </a>
+                {% if course.get_free_lesson_id %}
+                    <a class="pc__aboute__data-btn pc__aboute__free_lesson-btn" href="{% url 'add_free_lesson' lesson_id=course.get_free_lesson_id %}">Смотреть бесплатный урок</a>
+                {% else %}
+                    <a href="/free-lessons/" class="pc__aboute__data-btn pc__aboute__free_lesson-btn">Выбрать бесплатный урок</a>
+                {% endif %}
+            </div>
+        </div>
+        <img class="pc__aboute__block" src="/media/{{ course.image }}" alt="">
+    </section>
+</div>
+
+<!-- Заголовок с картинкой для мобилки-->
+<div class="site-box pc__aboute__narrow">
+    <section class="pc__aboute">
+        <img class="pc__aboute__block" src="/media/{{ course.image }}" alt="">
+        <div class="pc__aboute__block pc__aboute__data pc__aboute_first">
+            <div class="pc__aboute__info">
+                <a class="pc__aboute__age" href="{% url 'filter_courses' %}?key={{ course.age_group }}">{{ course.age_group }}</a>
+                <div class="pc__aboute__count">{{ course.get_quantity_lessons }}</div>
+                {% if course.lessons_starts_on %}
+                    <div class="pc__aboute__time" style="background: #FFEEEE; color: #F04F4F; border-style: none;">Открыт набор</div>
+                {% else %}
+                    <!-- Для главного начального курса, указать доп стили в этот элемент! -->
+                    <div class="pc__aboute__time" {% if course.slug == 'first-course' %} style="background: #FF8D8D; color: #FFFFFF; border-style: none;"{% endif %}>{{ course.duration }}</div>
+                {% endif %}
+            </div>
+            <div class="pc__aboute__name">{{ course.title }}</div>
+            <div class="pc__aboute__data-btns pc__aboute__data-btns_sign-up-btn">
+                <a class="test" href="#buy-course">
+                    <div class="pc__aboute__data-btn" {% if course.lessons_starts_on %} style="background: #FFEEEE; color: #F04F4F; border-style: none;"{% endif %}>Записаться на курс</div>
+                </a>
+            </div>
+        </div>
+    </section>
+    <section class="pc__aboute">
+        <div class="pc__aboute__block pc__aboute__data pc__aboute_second">
+            {% if course.lessons_starts_on %}
+                <div class="pc__about__lessons_starts_on">
+                    <img src="{% static 'img/Calendar.svg' %}">
+                    <div class="pc__aboute__note">&nbsp;Старт: {{ course.lessons_starts_on|date:"d-m-Y" }}</div>
+                </div>
+            {% else %}
+                <div class="pc__aboute__note">{{ course.note }}</div>
+            {% endif %}
+            <ul>
+                {% for description in descriptions %}
+                    <li>{{ description }}</li>
+                {% endfor %}
+            </ul>
+            <div class="pc__aboute__data-btns">
+                {% if course.get_free_lesson_id %}
+                    <a class="pc__aboute__data-btn pc__aboute__free_lesson-btn" href="{% url 'add_free_lesson' lesson_id=course.get_free_lesson_id %}">Смотреть бесплатный урок</a>
+                {% else %}
+                    <a href="/free-lessons/" class="pc__aboute__data-btn pc__aboute__free_lesson-btn">Выбрать бесплатный урок</a>
+                {% endif %}
+            </div>
+        </div>
+    </section>
+</div>

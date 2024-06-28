@@ -1,0 +1,60 @@
+{% load static %}
+
+
+<div class="site-box">
+    <h1 class="section__title">
+        <a href="/self-account/course/{{ course.slug }}/">&#10094  {{ course.title }}</a>
+    </h1>
+</div>
+
+<div class="site-box">
+    <div class="account__les-container">
+        <div></div>
+        <div class="account__les-title">
+            <p>Урок {{ lesson.number }}</p>
+            <h1>{{ lesson.title }}</h1>
+            <div class="account__les-play">{{ lesson.type }}</div>
+        </div>
+
+        <div>
+            {% if lesson.certificate %}
+                <div class="account__les-certificates">
+                    <div class="account__les-certificate">
+                        <img src="/media/{{ lesson.certificate }}" alt="Сертификат" id=account__les-hw-file-2ii>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+        <div class="account__les-video">
+            <video controls controlsList="nodownload" loop muted="" playsinline="playsinline" poster="/media/{{ lesson.image }}" class="wallpaper__video">
+                <source src="/media/{{ lesson.video_file }}" type="video/mp4">
+                <source src="/media/{{ lesson.image }}" type="video/webm">
+            </video>
+        </div>
+
+        <div></div>
+        <div class="account__les-btns">
+            <a class="account__les-btn account__les-tg" href="{{ course.telegram_channel_link }}" target="_blank"><div>Переходи в Телеграм-канал курса</div></a>
+            <div class="account__les-btns-lr">
+                {% if btn_l == '' %}
+                <a href="{{ btn_l }}"><div class="account__les-btn-l"></div></a>
+                {% else %}
+                <a href="{{ btn_l }}"><div class="account__les-btn-l account__les-btn-l-active"></div></a>
+                {% endif %}
+                {% if btn_r == '' %}
+                <a href="{{ btn_r }}"><div class="account__les-btn-r"></div></a>
+                {% else %}
+                <a href="{{ btn_r }}"><div class="account__les-btn-r account__les-btn-r-active"></div></a>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="account__les-desc-title">Описание<br>урока</div>
+        <div class="account__les-desc">
+            {% for desc in lesson_desc %}
+            <p>{{ desc }}</p>
+            {% endfor %}
+        </div>
+        
+    </div>
+</div>
